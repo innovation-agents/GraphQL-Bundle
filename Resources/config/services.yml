@@ -1,0 +1,16 @@
+services:
+  InnovationAgents\GraphQLBundle\Controller\GraphQLController:
+    arguments:
+      - '@InnovationAgents\GraphQLBundle\Schema\Resolver'
+      - '@InnovationAgents\GraphQLBundle\Schema\Builder'
+      - '%ia_graphql.graphql_schema_file%'
+    public: false
+    tags: ['controller.service_arguments']
+
+  InnovationAgents\GraphQLBundle\Schema\Resolver:
+    public: false
+
+  InnovationAgents\GraphQLBundle\Schema\Builder:
+    arguments:
+      - '@InnovationAgents\GraphQLBundle\Schema\Resolver'
+    public: false

@@ -1,0 +1,9 @@
+ia_graphql_endpoint:
+  path: /
+  methods: [GET, POST]
+  controller: InnovationAgents\GraphQLBundle\Controller\GraphQLController:endpoint
+
+ia_graphql_docs:
+  path: /docs
+  methods: [GET]
+  controller: InnovationAgents\GraphQLBundle\Controller\GraphQLController:docs
